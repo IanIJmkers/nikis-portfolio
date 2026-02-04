@@ -147,7 +147,7 @@ const Portfolio = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: hoveredId === project.id ? 1 : 0 }}
                   transition={{
-                    duration: 0.7,
+                    duration: 0.8,
                     ease: [0.4, 0, 0.2, 1],
                   }}
                 />
