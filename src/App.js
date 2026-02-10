@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SinglePage from "./pages/SinglePage";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<SinglePage />} />
+          <Route path="/project/:slug" element={<ProjectDetail />} />
         </Routes>
       </div>
     </Router>

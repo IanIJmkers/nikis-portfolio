@@ -3,80 +3,103 @@ import { motion } from "framer-motion";
 const AboutSection = () => {
   const styles = {
     section: {
-      height: "100vh",
+      minHeight: "100vh",
       width: "100%",
       backgroundColor: "#fff",
       display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+    },
+    imageContainer: {
+      width: "50%",
+      minHeight: "50vh",
+      overflow: "hidden",
+    },
+    image: {
+      width: "70%",
+      height: "80%",
+      objectFit: "cover",
     },
     content: {
-      maxWidth: "600px",
-      padding: "0 60px",
+      width: "50%",
+      padding: "80px 60px",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
     },
-    greeting: {
-      fontSize: "16px",
+    title: {
+      fontSize: "32px",
       fontWeight: 400,
-      marginBottom: "30px",
-      lineHeight: 1.6,
+      marginBottom: "50px",
       color: "#000",
+      textTransform: "uppercase",
+      letterSpacing: "1px",
+    },
+    textColumns: {
+      display: "flex",
+      gap: "40px",
+    },
+    column: {
+      flex: 1,
     },
     paragraph: {
       fontSize: "14px",
       lineHeight: 1.8,
-      color: "#333",
+      color: "#444",
       marginBottom: "20px",
       fontWeight: 300,
-    },
-    signatureContainer: {
-      marginTop: "50px",
-      marginBottom: "40px",
-    },
-    signature: {
-      fontSize: "64px",
-      fontFamily: "Brush Script MT, cursive",
-      color: "#000",
-      marginBottom: "5px",
-      fontWeight: 400,
-    },
-    name: {
-      fontSize: "10px",
-      letterSpacing: "2px",
-      textTransform: "uppercase",
-      color: "#000",
-      fontWeight: 400,
-    },
-    sincerely: {
-      fontSize: "14px",
-      color: "#333",
-      fontWeight: 300,
-      marginTop: "30px",
     },
   };
 
   return (
     <section id="about" style={styles.section}>
+      {/* Left Image */}
+      <div style={styles.imageContainer}>
+        <motion.img
+          src="/images/niki.jpg"
+          alt="Niki"
+          style={styles.image}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        />
+      </div>
+
+      {/* Right Content */}
       <motion.div
         style={styles.content}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
       >
-        <p style={styles.greeting}>Welcome to Niki Agency.</p>
-        <p style={styles.paragraph}>
-          Our photography is our strength. Representation is at each of our
-          unique clients through our experience in advertising, branded content,
-          and editorial. Active creative strategy and innovative digital
-          expertise. We partner with our clients to achieve their goals. We
-          believe that at the heart of every brand, there is a truth that the
-          world should see and we want to help you tell your story.
-        </p>
-        <div style={styles.signatureContainer}>
-          <div style={styles.signature}>Niki</div>
-          <div style={styles.name}>NIKI</div>
+        <h2 style={styles.title}>About Nikoletta Kalmar</h2>
+
+        <div style={styles.textColumns}>
+          <div style={styles.column}>
+            <p style={styles.paragraph}>
+              As a transformative designer, I'm acutely aware of the
+              environmental and socio-economic challenges that we need to own up
+              to as creatives. I believe deeply in taking responsibility about
+              how we produce and who produces our work.
+            </p>
+            <p style={styles.paragraph}>
+              "Sustainability" as a term has been used and misused so frequently
+              over the past decade, that claiming you're sustainable, isn't
+              specific enough.
+            </p>
+          </div>
+          <div style={styles.column}>
+            <p style={styles.paragraph}>
+              As a result, I would like to describe how NIKOLETTA KALMAR as a
+              brand owns up to our environmental responsibilities.
+            </p>
+            <p style={styles.paragraph}>
+              I currently work with clients across Denmark, the Netherlands, and
+              globally. Two key areas that I'm especially focused on: strategic
+              design thinking and sustainable brand development.
+            </p>
+          </div>
         </div>
-        <p style={styles.sincerely}>Sincerely,</p>
       </motion.div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { col } from "framer-motion/client";
 
 const HeroSection = () => {
   const scrollTo = (id) => {
@@ -33,7 +34,7 @@ const HeroSection = () => {
       zIndex: 10,
     },
     navItem: {
-      fontSize: "12px",
+      fontSize: "16px",
       fontWeight: 300,
       color: "#fff",
       cursor: "pointer",
@@ -41,26 +42,30 @@ const HeroSection = () => {
       transition: "opacity 0.3s ease",
     },
     navCenter: {
-      fontSize: "14px",
+      fontSize: "54px",
+      marginTop: "14px",
+      fontFamily: '"Gloved", sans-serif',
+      fontStyle: "normal",
       fontWeight: 400,
       color: "#fff",
-      letterSpacing: "0.5px",
+      letterSpacing: "6px",
     },
     titleContainer: {
-      flex: 1,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      position: "relative",
+      position: "absolute",
+      bottom: "60px",
+      right: "60px",
       zIndex: 10,
+      textAlign: "right",
     },
     title: {
-      fontSize: "120px",
-      fontWeight: 300,
-      color: "#fff",
-      letterSpacing: "8px",
-      textTransform: "lowercase",
+      fontFamily: '"Lunette", sans-serif',
+      fontSize: "180px",
+      fontWeight: 699,
+      color: "rgb(233, 229, 160)",
       margin: 0,
+      textTransform: "uppercase",
+      lineHeight: 1,
+      letterSpacing: "5px",
     },
     scrollIndicator: {
       position: "absolute",
@@ -92,7 +97,7 @@ const HeroSection = () => {
     <section style={styles.hero}>
       {/* Background image */}
       <img
-        src="/images/lychee.jpeg"
+        src="/images/globes.png"
         alt="Hero background"
         style={styles.backgroundImage}
       />
@@ -124,7 +129,9 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
         >
-          Niki
+          Where strategy
+          <br />
+          becomes design.
         </motion.h1>
       </div>
 
