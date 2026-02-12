@@ -39,14 +39,7 @@
   background: transparent;
 }
 
-.scrollContainer::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 3px;
-}
 
-.scrollContainer::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
 
 .card {
   flex-shrink: 0;
